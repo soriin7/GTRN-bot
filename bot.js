@@ -663,6 +663,7 @@ client.on('message', async msg => {
       hora = currentdate.getHours();
       minuto = currentdate.getMinutes();
 
+      //SEGREDO
       if (hora < 10) {
         hora = '0' + hora;
 
