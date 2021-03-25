@@ -1354,7 +1354,7 @@ client.on('message', msg => {
       .setColor('#fcad03')
       .setTitle('Patch Notes GTRN Bot v1.1 - (22/03/2021)')
       .addFields(
-        { name: 'New Features', value: '- Foda-se feature added. \n - gtpatch feature added. \n - Perdemo feature added. \n - gtprint feature added.' },
+        { name: 'New Features', value: '- Foda-se feature added. \n - gtpatch feature added. \n - Perdemo feature added. \n - gtprint feature added. \n - gtjokenpo freature added.' },
         { name: '\u200B', value: '\u200B' },
         { name: 'Changes', value: '- Changes on gtroleta' },
         { name: '\u200B', value: '\u200B' },
