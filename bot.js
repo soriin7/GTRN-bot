@@ -30,7 +30,7 @@ const bomdia = new cron.CronJob('00 30 09 * * *', () => {
 
 }); // fires every day, at 09:30:00
 const queue = new Map();
-require('events').EventEmitter.defaultMaxListeners = 40;
+require('events').EventEmitter.defaultMaxListeners = 45;
 require("dotenv").config();
 client.login(process.env.TOKEN);
 
@@ -1222,7 +1222,123 @@ client.on('message', msg => {
     }
   }
 });
+
 // -----+----- -----+----- -----+----- -----+----- -----+----- IMPAR -----+----- -----+----- -----+----- -----+----- -----+-----
+
+
+// -----+----- -----+----- -----+----- -----+----- -----+----- JOKENPO -----+----- -----+----- -----+----- -----+----- -----+-----
+client.on('message', msg => {
+  if (msg.content === 'gtjokenpo') {
+    msg.channel.send('Você precisa especificar sua escolha!\nPor exemplo: gtjokenpo papel')
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'gtjokenpo pedra') {
+    const arrayRoleta = (Math.floor(Math.random() * 3) + 1).toString();
+    const randomImage = new Discord.MessageAttachment(`./joken/${arrayRoleta}.jpg`, `${arrayRoleta}.jpg`);
+    if (arrayRoleta === '2' ) {
+      const exampleEmbed = new Discord.MessageEmbed()
+        .setColor('#39FF14')
+        .setTitle('✊ X ✌️' + ' - Você Ganhou!! 😀')
+        .attachFiles(randomImage)
+        .setImage(`attachment://2.jpg`)
+        .setTimestamp()
+      console.log(exampleEmbed);
+      msg.reply(exampleEmbed)
+    } else if (arrayRoleta === '1') {
+      const exampleEmbed = new Discord.MessageEmbed()
+        .setColor('#474A51')
+        .setTitle('✊ X ✊' + ' - Empate!! 🤨')
+        .attachFiles(randomImage)
+        .setImage(`attachment://1.jpg`)
+        .setTimestamp()
+      console.log(exampleEmbed);
+      msg.reply(exampleEmbed)
+    } else if (arrayRoleta ==='3') {
+      const exampleEmbed = new Discord.MessageEmbed()
+      .setColor('#FF0000')
+      .setTitle('✊ X 🤚' + ' - Você Perdeu!! 🙁')
+      .attachFiles(randomImage)
+      .setImage(`attachment://3.jpg`)
+      .setTimestamp()
+    console.log(exampleEmbed);
+    msg.reply(exampleEmbed)
+    }
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'gtjokenpo papel') {
+    const arrayRoleta = (Math.floor(Math.random() * 3) + 1).toString();
+    const randomImage = new Discord.MessageAttachment(`./joken/${arrayRoleta}.jpg`, `${arrayRoleta}.jpg`);
+    if (arrayRoleta === '2' ) {
+      const exampleEmbed = new Discord.MessageEmbed()
+        .setColor('#FF0000')
+        .setTitle('🤚 X ✌️' + ' - Você Perdeu!! 🙁')
+        .attachFiles(randomImage)
+        .setImage(`attachment://2.jpg`)
+        .setTimestamp()
+      console.log(exampleEmbed);
+      msg.reply(exampleEmbed)
+    } else if (arrayRoleta === '1') {
+      const exampleEmbed = new Discord.MessageEmbed()
+        .setColor('#39FF14')
+        .setTitle('🤚 X ✊' + ' - Você Ganhou!! 😀')
+        .attachFiles(randomImage)
+        .setImage(`attachment://1.jpg`)
+        .setTimestamp()
+      console.log(exampleEmbed);
+      msg.reply(exampleEmbed)
+    } else if (arrayRoleta ==='3') {
+      const exampleEmbed = new Discord.MessageEmbed()
+      .setColor('#474A51')
+      .setTitle('🤚 X 🤚' + ' - Empate!! 🤨')
+      .attachFiles(randomImage)
+      .setImage(`attachment://3.jpg`)
+      .setTimestamp()
+    console.log(exampleEmbed);
+    msg.reply(exampleEmbed)
+    }
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'gtjokenpo tesoura') {
+    const arrayRoleta = (Math.floor(Math.random() * 3) + 1).toString();
+    const randomImage = new Discord.MessageAttachment(`./joken/${arrayRoleta}.jpg`, `${arrayRoleta}.jpg`);
+    if (arrayRoleta === '2' ) {
+      const exampleEmbed = new Discord.MessageEmbed()
+        .setColor('#474A51')
+        .setTitle('✌️ X ✌️' + ' - Empate!! 🤨')
+        .attachFiles(randomImage)
+        .setImage(`attachment://2.jpg`)
+        .setTimestamp()
+      console.log(exampleEmbed);
+      msg.reply(exampleEmbed)
+    } else if (arrayRoleta === '1') {
+      const exampleEmbed = new Discord.MessageEmbed()
+        .setColor('#FF0000')
+        .setTitle('✌️ X ✊' + ' - Você Perdeu!! 🙁')
+        .attachFiles(randomImage)
+        .setImage(`attachment://1.jpg`)
+        .setTimestamp()
+      console.log(exampleEmbed);
+      msg.reply(exampleEmbed)
+    } else if (arrayRoleta ==='3') {
+      const exampleEmbed = new Discord.MessageEmbed()
+      .setColor('#39FF14')
+      .setTitle('✌️ X 🤚' + ' - Você Ganhou!! 😀')
+      .attachFiles(randomImage)
+      .setImage(`attachment://3.jpg`)
+      .setTimestamp()
+    console.log(exampleEmbed);
+    msg.reply(exampleEmbed)
+    }
+  }
+});
+
+// -----+----- -----+----- -----+----- -----+----- -----+----- JOKENPO -----+----- -----+----- -----+----- -----+----- -----+-----
 
 // -----+----- -----+----- -----+----- -----+----- -----+----- PATCH NOTES -----+----- -----+----- -----+----- -----+----- -----+-----
 
